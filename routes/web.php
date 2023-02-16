@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+
 // User Route
 Route::middleware(['auth','user-role:user'])->group(function()
 {

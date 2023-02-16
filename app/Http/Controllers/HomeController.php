@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -23,16 +23,16 @@ class HomeController extends Controller
      */
     public function userHome()
     {
-        return view('home',["msg"=>"I am user role"]);
+        return view('users.home',["msg"=>"I am user role"]);
     }
 
     public function editorHome()
     {
-        return view('home',["msg"=>"I am Editor role"]);
+        return view('editor.home',["msg"=>"I am Editor role"]);
     }
 
     public function adminHome()
     {
-        return view('home',["msg"=>"I am Admin role"]);
+        return view('admin.home',["msg"=>"I am Admin role"]);
     }
 }
